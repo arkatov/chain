@@ -1,25 +1,10 @@
-const Chain = callback => {
-  var queue = [];
+# t
 
-  var _next = () => {
-    var cb = queue.shift();
-    if (cb) {
-      cb(_next);
-    }
-  };
+> chain.js
 
-  setTimeout(_next, 0);
+## Usage
 
-  var then = cb => {
-    queue.push(cb);
-    return { then: then };
-  };
-
-  return then(callback);
-};
-
-// Test
-
+```js
 Chain(next => {
   setTimeout(() => {
     console.log(1);
@@ -38,3 +23,4 @@ Chain(next => {
       next();
     }, 300);
   });
+```
