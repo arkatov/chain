@@ -1,10 +1,10 @@
-# t
-
-> chain.js
+# chain.js
 
 ## Usage
 
 ```js
+import Chain from "chain.js";
+
 Chain(next => {
   setTimeout(() => {
     console.log(1);
@@ -24,3 +24,7 @@ Chain(next => {
     }, 300);
   });
 ```
+
+> 1
+> 2
+> 3
