@@ -1,16 +1,16 @@
 const Chain = callback => {
   var queue = [];
 
-  function _next() {
+  var _next = () => {
     var cb = queue.shift();
     if (cb) {
       cb(_next);
     }
-  }
+  };
 
   setTimeout(_next, 0);
 
-  var then = function(cb) {
+  var then = cb => {
     queue.push(cb);
     return { then: then };
   };
